@@ -7,10 +7,10 @@ class Connection
   public function __construct()
   {
     $server_name = "127.0.0.1";
-    $db_name     = "cfgis";
+    $db_name     = "cf-gis";
     $db_username = "root";
     $db_password = "";
-    $port        = 3308;
+    $port        = 3306;
 
     try {
 

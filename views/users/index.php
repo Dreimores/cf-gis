@@ -16,7 +16,7 @@ include('./components/navbar.php');
       <a href="?route=user-create" class="btn btn-dark text-white"> New Record </a>
     </div>
     <div class="card-body">
-      <table id="datatablesSimple">
+      <table id="datatablesSimple" class="table">
         <thead>
           <tr>
             <th>Name</th>
@@ -29,32 +29,32 @@ include('./components/navbar.php');
           </tr>
         </thead>
         <tbody>
-          <?php foreach($users as $user) { ?>
+          <?php foreach ($users as $user) { ?>
             <tr>
-              <th><?= $user['full_name'] ?></th>
-              <th><?= $user['email'] ?></th>
-              <th><?= $user['province'] ?></th>
-              <th><?= $user['barangay'] ?></th>
-              <th><?= $user['city'] ?></th>
-              <th><?= $user['municipal'] ?></th>
-              <th>
+              <td><?= $user['full_name'] ?></td>
+              <td><?= $user['email'] ?></td>
+              <td><?= $user['province'] ?></td>
+              <td><?= $user['barangay'] ?></td>
+              <td><?= $user['city'] ?></td>
+              <td><?= $user['municipal'] ?></td>
+              <td>
                 <div class="d-flex justify-content-center gap-2">
-                  <div>
-                    <a href="?route=user-edit" class="btn btn-primary"> <i class="fas fa-edit"></i> </a>
-                  </div>
-                  <div>
-                    <a class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a>
-                  </div>
+                  <a href="?route=user-edit" class="btn btn-sm btn-primary">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
                 </div>
-              </th>
+              </td>
             </tr>
           <?php } ?>
         </tbody>
       </table>
     </div>
   </div>
-</div> 
+</div>
 <?php
-  include('./components/footer.php');
+include('./components/footer.php');
 include('./components/script.php');
 ?>

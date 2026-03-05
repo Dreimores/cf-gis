@@ -17,7 +17,7 @@ class DashBoardController
 
   public function post($value)
   {
-    return $_POST[$value];
+    return $_POST[$value] ?? '';
   }
 
   public function dashBoard()
@@ -34,6 +34,24 @@ class DashBoardController
 
   public function userCreate()
   {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+      $lastName     = $this->post('last_name');
+      $firstName    = $this->post('first_name');
+      $middleName   = $this->post('middle_name');
+      $email        = $this->post('email');
+      $province     = $this->post('province');
+      $barangay     = $this->post('barangay');
+      $municipality = $this->post('municipality');
+      $city         = $this->post('city');
+      $password     = $this->post('password');
+
+      $this->UserModel->createUser($lastName, $firstName, $middleName, $email, $password, $province, $barangay, $city, $municipality);
+
+      header("Location: ?route=user");
+      exit;
+    }
+
     $this->view('users/create.php');
   }
 

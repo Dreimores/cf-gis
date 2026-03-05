@@ -9,30 +9,24 @@ include('./components/navbar.php');
   </ol>
   <div class="card">
     <div class="card-body">
-      <form action="" id="save-form-farmer" method="post">
+      <form action="?route=user-create" id="save-form-user" method="post">
         <div class="row g-3 fs-6 fw-semibold">
+          <!-- Last Name -->
+          <div class="col-12 col-md-6">
+            <label class="form-label">Last Name</label>
+            <input type="text" name="last_name" class="form-control">
+          </div>
 
-          <div class="col-12">
-            <div class="row g-3">
-              <!-- Last Name -->
-              <div class="col-12 col-md-4">
-                <label class="form-label">Last Name</label>
-                <input type="text" name="last_name" class="form-control">
-              </div>
+          <!-- First Name -->
+          <div class="col-12 col-md-6">
+            <label class="form-label">First Name</label>
+            <input type="text" name="first_name" class="form-control">
+          </div>
 
-              <!-- First Name -->
-              <div class="col-12 col-md-4">
-                <label class="form-label">First Name</label>
-                <input type="text" name="first_name" class="form-control">
-              </div>
-
-              <!-- Middle Name -->
-              <div class="col-12 col-md-4">
-                <label class="form-label">Middle Name</label>
-                <input type="text" name="middle_name" class="form-control">
-              </div>
-
-            </div>
+          <!-- Middle Name -->
+          <div class="col-12 col-md-6">
+            <label class="form-label">Middle Name</label>
+            <input type="text" name="middle_name" class="form-control">
           </div>
 
           <!-- Email -->
@@ -44,19 +38,25 @@ include('./components/navbar.php');
           <!-- Province -->
           <div class="col-12 col-md-6">
             <label class="form-label">Provice</label>
-            <input type="email" name="province" class="form-control">
+            <input type="text" name="province" class="form-control">
+          </div>
+
+          <!-- Province -->
+          <div class="col-12 col-md-6">
+            <label class="form-label">Barangay</label>
+            <input type="text" name="barangay" class="form-control">
           </div>
 
           <!-- Municipality -->
           <div class="col-12 col-md-6">
             <label class="form-label">Municipality</label>
-            <input type="email" name="municipality" class="form-control">
+            <input type="text" name="municipality" class="form-control">
           </div>
 
           <!-- City -->
           <div class="col-12 col-md-6">
             <label class="form-label">City</label>
-            <input type="email" name="city" class="form-control">
+            <input type="text" name="city" class="form-control">
           </div>
 
           <!-- Password -->
@@ -80,7 +80,7 @@ include('./components/navbar.php');
         <a href="?route=user" class="btn btn-danger">
           <i class="fas fa-ban"></i> Cancel
         </a>
-        <button form="save-form-farmer" class="btn btn-success">
+        <button form="save-form-user" class="btn btn-success">
           <i class="fas fa-save"></i> Save
         </button>
       </div>

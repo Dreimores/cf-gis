@@ -9,7 +9,7 @@
   <meta name="author" content="" />
   <title> | CF-GIS </title>
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
+  <link href="./css/mystyles.css" rel="stylesheet" />
   <link rel="icon" href="./images/cacao-logo.png"/>
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
