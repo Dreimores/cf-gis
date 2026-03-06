@@ -19,32 +19,36 @@ include('./components/navbar.php');
       <table id="datatablesSimple">
         <thead>
           <tr>
-            <th>Code #</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Middle Name</th>
+            <th>Assign Code#</th>
+            <th>Birth Date</th>
+            <th>Age</th>
+            <th>Purok</th>
             <th>Phone Number</th>
+            <th>Notes</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>123</th>
-            <th>sample last name</th>
-            <th>sample first name</th>
-            <th>sample middle name</th>
-            <th>phone number</th>
-            <th>
-              <div class="d-flex justify-content-center gap-2">
-                <div>
-                  <a href="?route=farm-edit" class="btn btn-primary"> <i class="fas fa-edit"></i> </a>
+          <?php foreach ($farmers as $farmer): ?>
+            <tr>  
+              <th><?= $farmer['assign_code'] ?></th>
+              <th><?= $farmer['birth_date'] ?></th>
+              <th><?= $farmer['age'] ?></th>
+              <th><?= $farmer['purok'] ?></th>
+              <th><?= $farmer['cellphone_number'] ?></th>
+              <th><?= $farmer['notes'] ?></th>
+              <th>
+                <div class="d-flex justify-content-center gap-2">
+                  <div>
+                    <a href="?route=farm-edit" class="btn btn-primary"> <i class="fas fa-edit"></i> </a>
+                  </div>
+                  <div>
+                    <a class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a>
+                  </div>
                 </div>
-                <div>
-                  <a class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a>
-                </div>
-              </div>
-            </th>
-          </tr>
+              </th>
+            </tr>
+          <?php endforeach ?>
         </tbody>
       </table>
     </div>

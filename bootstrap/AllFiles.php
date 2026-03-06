@@ -13,7 +13,9 @@ $models = function (array $paths) {
 
 $models([
   'LoginModel.php',
+  'DashboardModel.php',
   'UserModel.php',
+  'FarmInfoModel.php',
 ]);
 
 /**
@@ -28,9 +30,13 @@ $controllers = function (array $paths) {
 $controllers([
   'LoginController.php',
   'DashBoardController.php',
+  'UserController.php',
+  'FarmInfoController.php',
 ]);
 
 $InstanceController = [
-  'authLogin' => new LoginController(),
-  'dashboard' => new DashBoardController(),
+  'authLogin'  => new LoginController(),
+  'dashboard'  => new DashBoardController(),
+  'user'       => new UserController(),
+  'farmerInfo' => new FarmInfoController(),
 ];

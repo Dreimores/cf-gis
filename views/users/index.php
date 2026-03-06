@@ -29,7 +29,7 @@ include('./components/navbar.php');
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($users as $user) { ?>
+          <?php foreach ($users as $user): ?>
             <tr>
               <td><?= $user['full_name'] ?></td>
               <td><?= $user['email'] ?></td>
@@ -54,7 +54,7 @@ include('./components/navbar.php');
                 </div>
               </td>
             </tr>
-          <?php } ?>
+          <?php endforeach ?>
         </tbody>
       </table>
     </div>
