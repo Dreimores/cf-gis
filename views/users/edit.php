@@ -9,30 +9,26 @@ include('./components/navbar.php');
   </ol>
   <div class="card">
     <div class="card-body">
-      <?php foreach($users as $user): ?>
-        <form action="" id="save-form-farmer" method="post">
+      <?php foreach ($users as $user): ?>
+        <form action="?route=user-edit" id="save-form-farmer" method="post">
+          <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
           <div class="row g-3 fs-6 fw-semibold">
-            <div class="col-12">
-              <div class="row g-3">
-                <!-- Last Name -->
-                <div class="col-12 col-md-4">
-                  <label class="form-label">Last Name</label>
-                  <input type="text" name="last_name" value="<?= $user['first_name'] ?>" class="form-control">
-                </div>
+            <!-- Last Name -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">Last Name</label>
+              <input type="text" name="last_name" value="<?= $user['last_name'] ?>" class="form-control">
+            </div>
 
-                <!-- First Name -->
-                <div class="col-12 col-md-4">
-                  <label class="form-label">First Name</label>
-                  <input type="text" name="first_name" value="<?= $user['last_name'] ?>" class="form-control">
-                </div>
+            <!-- First Name -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">First Name</label>
+              <input type="text" name="first_name" value="<?= $user['first_name'] ?>" class="form-control">
+            </div>
 
-                <!-- Middle Name -->
-                <div class="col-12 col-md-4">
-                  <label class="form-label">Middle Name</label>
-                  <input type="text" name="middle_name" value="<?= $user['middle_name'] ?>" class="form-control">
-                </div>
-
-              </div>
+            <!-- Middle Name -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">Middle Name</label>
+              <input type="text" name="middle_name" value="<?= $user['middle_name'] ?>" class="form-control">
             </div>
 
             <!-- Email -->
@@ -44,19 +40,25 @@ include('./components/navbar.php');
             <!-- Province -->
             <div class="col-12 col-md-6">
               <label class="form-label">Provice</label>
-              <input type="email" name="province" value="<?= $user['province'] ?>" class="form-control">
+              <input type="text" name="province" value="<?= $user['province'] ?>" class="form-control">
+            </div>
+
+            <!-- Province -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">Barangay</label>
+              <input type="text" name="barangay" value="<?= $user['barangay'] ?>" class="form-control">
             </div>
 
             <!-- Municipality -->
             <div class="col-12 col-md-6">
               <label class="form-label">Municipality</label>
-              <input type="email" name="municipality" value="<?= $user['municipal'] ?>" class="form-control">
+              <input type="text" name="municipality" value="<?= $user['municipal'] ?>" class="form-control">
             </div>
 
             <!-- City -->
             <div class="col-12 col-md-6">
               <label class="form-label">City</label>
-              <input type="email" name="city" value="<?= $user['city'] ?>" class="form-control">
+              <input type="text" name="city" value="<?= $user['city'] ?>" class="form-control">
             </div>
 
             <!-- Password -->
@@ -81,7 +83,7 @@ include('./components/navbar.php');
         <a href="?route=user" class="btn btn-danger">
           <i class="fas fa-ban"></i> Cancel
         </a>
-        <button form="save-form-farmer" class="btn btn-success">
+        <button form="save-form-farmer" name="save-form-farmer" class="btn btn-success">
           <i class="fas fa-save"></i> Save
         </button>
       </div>

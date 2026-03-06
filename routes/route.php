@@ -30,6 +30,9 @@ switch ($route) {
   case "user-edit":
     $InstanceController['dashboard']->userEdit();
     break;
+  case "user-delete":
+    $InstanceController['dashboard']->userDelete();
+    break;
   default:
     $InstanceController['authLogin']->default();
     break;
