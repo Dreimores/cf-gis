@@ -9,69 +9,70 @@ include('./components/navbar.php');
   </ol>
   <div class="card">
     <div class="card-body">
-      <form action="" id="save-form-farmer" method="post">
-        <div class="row g-3 fs-6 fw-semibold">
+      <?php foreach($users as $user): ?>
+        <form action="" id="save-form-farmer" method="post">
+          <div class="row g-3 fs-6 fw-semibold">
+            <div class="col-12">
+              <div class="row g-3">
+                <!-- Last Name -->
+                <div class="col-12 col-md-4">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" name="last_name" value="<?= $user['first_name'] ?>" class="form-control">
+                </div>
 
-          <div class="col-12">
-            <div class="row g-3">
-              <!-- Last Name -->
-              <div class="col-12 col-md-4">
-                <label class="form-label">Last Name</label>
-                <input type="text" name="last_name" class="form-control">
+                <!-- First Name -->
+                <div class="col-12 col-md-4">
+                  <label class="form-label">First Name</label>
+                  <input type="text" name="first_name" value="<?= $user['last_name'] ?>" class="form-control">
+                </div>
+
+                <!-- Middle Name -->
+                <div class="col-12 col-md-4">
+                  <label class="form-label">Middle Name</label>
+                  <input type="text" name="middle_name" value="<?= $user['middle_name'] ?>" class="form-control">
+                </div>
+
               </div>
+            </div>
 
-              <!-- First Name -->
-              <div class="col-12 col-md-4">
-                <label class="form-label">First Name</label>
-                <input type="text" name="first_name" class="form-control">
-              </div>
+            <!-- Email -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" value="<?= $user['email'] ?>" class="form-control">
+            </div>
 
-              <!-- Middle Name -->
-              <div class="col-12 col-md-4">
-                <label class="form-label">Middle Name</label>
-                <input type="text" name="middle_name" class="form-control">
-              </div>
+            <!-- Province -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">Provice</label>
+              <input type="email" name="province" value="<?= $user['province'] ?>" class="form-control">
+            </div>
 
+            <!-- Municipality -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">Municipality</label>
+              <input type="email" name="municipality" value="<?= $user['municipal'] ?>" class="form-control">
+            </div>
+
+            <!-- City -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">City</label>
+              <input type="email" name="city" value="<?= $user['city'] ?>" class="form-control">
+            </div>
+
+            <!-- Password -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">Password</label>
+              <input type="password" name="password" value="<?= $user['password'] ?>" class="form-control">
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="col-12 col-md-6">
+              <label class="form-label">Confirm Password</label>
+              <input type="password" name="confirm_password" class="form-control">
             </div>
           </div>
-
-          <!-- Email -->
-          <div class="col-12 col-md-6">
-            <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-control">
-          </div>
-
-          <!-- Province -->
-          <div class="col-12 col-md-6">
-            <label class="form-label">Provice</label>
-            <input type="email" name="province" class="form-control">
-          </div>
-
-          <!-- Municipality -->
-          <div class="col-12 col-md-6">
-            <label class="form-label">Municipality</label>
-            <input type="email" name="municipality" class="form-control">
-          </div>
-
-          <!-- City -->
-          <div class="col-12 col-md-6">
-            <label class="form-label">City</label>
-            <input type="email" name="city" class="form-control">
-          </div>
-
-          <!-- Password -->
-          <div class="col-12 col-md-6">
-            <label class="form-label">Password</label>
-            <input type="password" name="password" class="form-control">
-          </div>
-
-          <!-- Confirm Password -->
-          <div class="col-12 col-md-6">
-            <label class="form-label">Confirm Password</label>
-            <input type="password" name="confirm_password" class="form-control">
-          </div>
-        </div>
-      </form>
+        </form>
+      <?php endforeach ?>
     </div>
 
     <!-- Card footer -->

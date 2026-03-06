@@ -9,7 +9,7 @@ include('./components/navbar.php');
   </ol>
   <div class="card">
     <div class="card-body">
-      <form action="?route=user-create" id="save-form-user" method="post">
+      <form action="?route=user-create" id="save-form-user-create" method="post">
         <div class="row g-3 fs-6 fw-semibold">
           <!-- Last Name -->
           <div class="col-12 col-md-6">
@@ -80,7 +80,7 @@ include('./components/navbar.php');
         <a href="?route=user" class="btn btn-danger">
           <i class="fas fa-ban"></i> Cancel
         </a>
-        <button form="save-form-user" class="btn btn-success">
+        <button form="save-form-user-create" class="btn btn-success">
           <i class="fas fa-save"></i> Save
         </button>
       </div>

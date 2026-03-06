@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title> | CF-GIS </title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="./css/mystyles.css" rel="stylesheet" />
     <link rel="icon" href="./images/cacao-logo.png" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   </head>
@@ -43,7 +43,7 @@
                     <label for="inputPassword">Password</label>
                     <span class="text-danger"><?= $this->flash('error_password') ?></span>
                   </div>
-
+                  
                   <!-- Submit -->
                   <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                     <button type="submit"

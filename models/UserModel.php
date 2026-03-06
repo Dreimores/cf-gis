@@ -3,58 +3,29 @@
 class UserModel extends Connection
 {
 
-  # initialize the connection
   public function __construct()
   {
     parent::__construct();
   }
-  # end 
 
   public function readUser()
   {
-    $stmt = $this->getConnection()->prepare("
-  SELECT *,
-  CONCAT(
-    first_name, 
-    ' ',
-    IF(middle_name IS NOT NULL AND middle_name != '', 
-       CONCAT(LEFT(middle_name, 1), '. '), 
-       ''
-    ),
-    last_name
-  ) AS full_name
-  FROM users
-  ORDER BY first_name ASC
-");
+    $stmt = $this->getConnection()->prepare("SELECT *, CONCAT(first_name, ' ', IF(middle_name IS NOT NULL AND middle_name != '', CONCAT(LEFT(middle_name, 1), '. '), ''), last_name) AS full_name FROM users ORDER BY first_name ASC");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  public function createUser(
-    string $lastName,
-    string $firstName,
-    string $middleName,
-    string $email,
-    string $password,
-    string $province,
-    string $barangay,
-    string $city,
-    string $municipality
-  ) {
+  public function createUser(string $lastName, string $firstName, string $middleName, string $email, string $password, string $province, string $barangay, string $city, string $municipality) 
+  {
     $stmt = $this->getConnection()->prepare("INSERT INTO users (last_name, first_name, middle_name, email, password, province, barangay, city, municipal) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-    $stmt->execute([
-      $lastName,
-      $firstName,
-      $middleName,
-      $email,
-      $password,
-      $province,
-      $barangay,
-      $city,
-      $municipality
-    ]);
-
+    $stmt->execute([$lastName, $firstName, $middleName, $email, $password, $province, $barangay, $city, $municipality]);
     return $this->getConnection()->lastInsertId();
+  }
+
+  public function editUser($id)
+  {
+    $stmt = $this->getConnection()->prepare("SELECT * FROM users WHERE id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 }

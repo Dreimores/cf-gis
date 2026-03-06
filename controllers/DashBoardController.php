@@ -57,7 +57,9 @@ class DashBoardController
 
   public function userEdit()
   {
-    $this->view('users/edit.php');
+    $id    = $this->post('user_id');
+    $users = $this->UserModel->editUser($id);
+    $this->view('users/edit.php', ['users' => $users]);
   }
 
   public function farmerInfo()

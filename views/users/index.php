@@ -39,9 +39,12 @@ include('./components/navbar.php');
               <td><?= $user['municipal'] ?></td>
               <td>
                 <div class="d-flex justify-content-center gap-2">
-                  <a href="?route=user-edit" class="btn btn-sm btn-primary">
-                    <i class="fas fa-edit"></i>
-                  </a>
+                  <form action="?route=user-edit" method="post">
+                    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                    <button type="submit" class="btn btn-sm btn-primary">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                  </form>
                   <a class="btn btn-sm btn-danger">
                     <i class="fas fa-trash-alt"></i>
                   </a>
